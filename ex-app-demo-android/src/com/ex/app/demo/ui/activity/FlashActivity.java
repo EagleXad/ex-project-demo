@@ -11,6 +11,9 @@ public class FlashActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ex_activity_flash);
+		
+		
+		
 	}
 
 }
