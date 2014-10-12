@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ex_title_bar"
+    android:orientation="horizontal" >
+    
+    <Button 
+        android:id="@+id/ex_wt_btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:background="@drawable/ex_btn_back"/>
+    
+    <TextView 
+        android:id="@+id/ex_wt_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:textColor="@color/ex_color_black"
+        android:textSize="17sp"
+        android:text="登录"/>
+    
+    <Button 
+        android:id="@+id/ex_wt_btn_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:background="@drawable/ex_btn_menu"/>
+
+</FrameLayout>
