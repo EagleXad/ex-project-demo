@@ -30,8 +30,8 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.ex.sdk.utils.callback.ExRequestCallback;
-import com.ex.sdk.utils.exception.ExException;
+import com.ex.sdk.core.callback.ExRequestCallback;
+import com.ex.sdk.core.exception.ExException;
 
 /**
  * @ClassName: MgrNet

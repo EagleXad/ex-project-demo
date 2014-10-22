@@ -30,6 +30,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.ex.sdk.utils.lib.DES;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -185,7 +187,7 @@ public class MgrCache {
 
 		try {
 			out = new BufferedWriter(new FileWriter(file), 1024);
-			out.write(value);
+			out.write(DES.encrypt(value, mContext));
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -234,7 +236,9 @@ public class MgrCache {
 				sb.append(currentLine);
 			}
 
-			mInstanceMap.put(key, sb.toString());
+			String result = DES.decrypt(sb.toString(), mContext);
+
+			mInstanceMap.put(key, result);
 			return sb.toString();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -581,6 +585,10 @@ public class MgrCache {
 
 		if (mCacheFile == null) {
 			return;
+		}
+
+		if (mInstanceMap != null) {
+			mInstanceMap.clear();
 		}
 
 		MgrThread.getInstance().execute(new Runnable() {

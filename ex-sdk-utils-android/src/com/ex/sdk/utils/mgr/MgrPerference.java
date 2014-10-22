@@ -138,6 +138,86 @@ public class MgrPerference {
 	}
 
 	/**
+	 * 获取内容 （int）
+	 * 
+	 * @param tag
+	 * @return
+	 */
+	public int getInt(String tag) {
+
+		SharedPreferences mgr = getDefaultSharedPreferences();
+
+		if (mgr == null) {
+
+			return 0;
+		}
+
+		return mgr.getInt(tag, 0);
+	}
+
+	/**
+	 * 添加内容 （int）
+	 * 
+	 * @param tag
+	 * @param value
+	 */
+	public void putInt(String tag, int value) {
+
+		SharedPreferences mgr = getDefaultSharedPreferences();
+
+		if (mgr == null) {
+
+			return;
+		}
+
+		SharedPreferences.Editor editor = mgr.edit();
+
+		editor.putInt(tag, value);
+
+		editor.commit();
+	}
+	
+	/**
+	 * 获取内容 （Long）
+	 * 
+	 * @param tag
+	 * @return
+	 */
+	public long getLong(String tag) {
+
+		SharedPreferences mgr = getDefaultSharedPreferences();
+
+		if (mgr == null) {
+
+			return 0;
+		}
+
+		return mgr.getLong(tag, 0);
+	}
+
+	/**
+	 * 添加内容 （Long）
+	 * 
+	 * @param tag
+	 * @param value
+	 */
+	public void putLong(String tag, long value) {
+
+		SharedPreferences mgr = getDefaultSharedPreferences();
+
+		if (mgr == null) {
+
+			return;
+		}
+
+		SharedPreferences.Editor editor = mgr.edit();
+
+		editor.putLong(tag, value);
+
+		editor.commit();
+	}
+
+	/**
 	 * 获取内容 （对象）
 	 * 
 	 * @param tag

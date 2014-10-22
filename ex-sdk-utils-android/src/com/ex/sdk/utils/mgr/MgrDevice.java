@@ -24,6 +24,8 @@ import android.os.Environment;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 
+import com.ex.sdk.utils.lib.OpenUDID;
+
 /**
  * @ClassName: MgrDevice
  * @Description: MgrDevice 管理类
@@ -157,6 +159,44 @@ public class MgrDevice {
 		Locale l = Locale.getDefault();
 
 		return String.format("%s-%s", l.getLanguage(), l.getCountry());
+	}
+
+	/**
+	 * 获取设备Id
+	 * 
+	 * @return
+	 */
+	public String getDeviceId() {
+
+		String deviceId = "";
+
+		try {
+			OpenUDID.syncContext(mContext);
+			deviceId = OpenUDID.getCorpUDID(mContext.getPackageName());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return  MgrString.getInstance().dealEmpty(deviceId);
+	}
+	
+	/**
+	 * 获取设备Id
+	 * 
+	 * @return
+	 */
+	public String getDeviceId(String pkg) {
+
+		String deviceId = "";
+
+		try {
+			OpenUDID.syncContext(mContext);
+			deviceId = OpenUDID.getCorpUDID(pkg);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return  MgrString.getInstance().dealEmpty(deviceId);
 	}
 
 	/**

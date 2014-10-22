@@ -12,9 +12,9 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.view.View;
 
-import com.ex.sdk.utils.callback.ExLoadImageCallback;
-import com.ex.sdk.utils.callback.ExRequestCallback;
-import com.ex.sdk.utils.exception.ExException;
+import com.ex.sdk.core.callback.ExLoadImageCallback;
+import com.ex.sdk.core.callback.ExRequestCallback;
+import com.ex.sdk.core.exception.ExException;
 
 /**
  * @ClassName: MgrImage

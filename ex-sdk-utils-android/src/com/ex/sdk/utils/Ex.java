@@ -2,17 +2,24 @@ package com.ex.sdk.utils;
 
 import android.content.Context;
 
+import com.ex.sdk.utils.mgr.MgrActivity;
+import com.ex.sdk.utils.mgr.MgrAndroid;
+import com.ex.sdk.utils.mgr.MgrApp;
 import com.ex.sdk.utils.mgr.MgrCache;
 import com.ex.sdk.utils.mgr.MgrDevice;
+import com.ex.sdk.utils.mgr.MgrDownload;
 import com.ex.sdk.utils.mgr.MgrFile;
 import com.ex.sdk.utils.mgr.MgrImage;
 import com.ex.sdk.utils.mgr.MgrLog;
 import com.ex.sdk.utils.mgr.MgrMD5;
 import com.ex.sdk.utils.mgr.MgrNet;
+import com.ex.sdk.utils.mgr.MgrNotification;
 import com.ex.sdk.utils.mgr.MgrPerference;
 import com.ex.sdk.utils.mgr.MgrString;
 import com.ex.sdk.utils.mgr.MgrT;
 import com.ex.sdk.utils.mgr.MgrThread;
+import com.ex.sdk.utils.mgr.MgrToast;
+import com.ex.sdk.utils.mgr.MgrZip;
 
 /**
  * @ClassName: Ex
@@ -114,6 +121,62 @@ public class Ex {
 	public static MgrMD5 MD5() {
 
 		return MgrMD5.getInstance();
+	}
+
+	/**
+	 * Ex Activity 管理
+	 */
+	public static MgrActivity Activity(Context context) {
+
+		return MgrActivity.getInstance(context);
+	}
+
+	/**
+	 * Ex Android 管理
+	 */
+	public static MgrAndroid Android(Context context) {
+
+		return MgrAndroid.getInstance(context);
+	}
+
+	/**
+	 * Ex App 管理
+	 */
+	public static MgrApp App(Context context) {
+
+		return MgrApp.getInstance(context);
+	}
+
+	/**
+	 * Ex Download 管理
+	 */
+	public static MgrDownload Download(Context context) {
+
+		return MgrDownload.getInstance(context);
+	}
+
+	/**
+	 * Ex Notification 管理
+	 */
+	public static MgrNotification Notification(Context context) {
+
+		return MgrNotification.getInstance(context);
+	}
+
+	/**
+	 * Ex Toast 管理
+	 */
+	public static MgrToast Toast(Context context) {
+
+		return MgrToast.getInstance(context);
+	}
+
+	/**
+	 * Ex Zip 管理
+	 */
+	public static MgrZip Zip() {
+
+		return MgrZip.getInstance();
 	}
 
 }
