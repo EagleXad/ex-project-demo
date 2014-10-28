@@ -20,15 +20,32 @@ import java.util.zip.ZipOutputStream;
 
 import org.apache.http.protocol.HTTP;
 
+/** 
+* @ClassName: MgrZip 
+* @Description: MgrZip 管理类 
+* @author Aloneter
+* @date 2014-10-24 下午5:50:48 
+* @Version 1.0
+* 
+*/
 public class MgrZip {
 
 	private static final int BUFF_SIZE = 1024 * 1024; // 1M Byte
 
+	/**
+	 * 创建者
+	 */
 	private static class ZipHolder {
 
 		private static final MgrZip mgr = new MgrZip();
 	}
 
+	/**
+	 * 获取当前实例对象
+	 * 
+	 * @param context
+	 * @return
+	 */
 	public static MgrZip getInstance() {
 
 		return ZipHolder.mgr;

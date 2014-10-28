@@ -15,13 +15,30 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
+/** 
+* @ClassName: MgrScreen 
+* @Description: MgrScreen 管理类 
+* @author Aloneter
+* @date 2014-10-24 下午5:50:36 
+* @Version 1.0
+* 
+*/
 public class MgrScreen {
 
+	/**
+	 * 创建者
+	 */
 	private static class ScreenHolder {
 
 		private static final MgrScreen mgr = new MgrScreen();
 	}
 
+	/**
+	 * 获取当前实例对象
+	 * 
+	 * @param context
+	 * @return
+	 */
 	public static MgrScreen getInstance() {
 
 		return ScreenHolder.mgr;

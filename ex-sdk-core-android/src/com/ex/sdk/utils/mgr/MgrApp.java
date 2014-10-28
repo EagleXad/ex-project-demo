@@ -22,6 +22,14 @@ import android.widget.Toast;
 
 import com.ex.sdk.utils.Ex;
 
+/** 
+* @ClassName: MgrApp 
+* @Description: MgrApp 管理类
+* @author Aloneter
+* @date 2014-10-24 下午5:53:09 
+* @Version 1.0
+* 
+*/
 public class MgrApp {
 
 	public static Context mContext; // 上下文

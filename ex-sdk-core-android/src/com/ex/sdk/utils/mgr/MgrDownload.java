@@ -4,6 +4,14 @@ import android.content.Context;
 
 import com.ex.sdk.core.callback.ExDownloadCallback;
 
+/** 
+* @ClassName: MgrDownload 
+* @Description: MgrDownload 管理类 
+* @author Aloneter
+* @date 2014-10-24 下午5:52:28 
+* @Version 1.0
+* 
+*/
 public class MgrDownload {
 
 	private static Context mContext; // 上下文

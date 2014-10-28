@@ -3,15 +3,32 @@ package com.ex.sdk.utils.mgr;
 import android.content.Context;
 import android.content.pm.PackageManager.NameNotFoundException;
 
+/** 
+* @ClassName: MgrAndroid 
+* @Description: MgrAndroid 管理类
+* @author Aloneter
+* @date 2014-10-24 下午5:52:58 
+* @Version 1.0
+* 
+*/
 public class MgrAndroid {
 
 	private static Context mContext;
 
+	/**
+	 * 创建者
+	 */
 	private static class AndroidHolder {
 
 		private static final MgrAndroid mgr = new MgrAndroid();
 	}
 
+	/**
+	 * 获取当前实例
+	 * 
+	 * @param context
+	 * @return
+	 */
 	public static MgrAndroid getInstance(Context context) {
 
 		mContext = context;

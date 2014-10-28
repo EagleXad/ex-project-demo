@@ -7,16 +7,33 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+/**
+ * @ClassName: MgrActivity
+ * @Description: MgrActivity 管理类
+ * @author Aloneter
+ * @date 2014-10-24 下午5:53:20
+ * @Version 1.0
+ * 
+ */
 public class MgrActivity {
 
 	private static CopyOnWriteArrayList<Activity> mActivities;
 	private static Context mContext;
 
+	/**
+	 * 创建者
+	 */
 	private static class ActivityHolder {
 
 		private static final MgrActivity mgr = new MgrActivity();
 	}
 
+	/**
+	 * 获取当前实例
+	 * 
+	 * @param context
+	 * @return
+	 */
 	public static MgrActivity getInstance(Context context) {
 
 		mContext = context;

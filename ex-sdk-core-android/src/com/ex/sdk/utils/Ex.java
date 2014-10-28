@@ -7,6 +7,7 @@ import com.ex.sdk.utils.mgr.MgrAndroid;
 import com.ex.sdk.utils.mgr.MgrApp;
 import com.ex.sdk.utils.mgr.MgrCache;
 import com.ex.sdk.utils.mgr.MgrDevice;
+import com.ex.sdk.utils.mgr.MgrDialog;
 import com.ex.sdk.utils.mgr.MgrDownload;
 import com.ex.sdk.utils.mgr.MgrFile;
 import com.ex.sdk.utils.mgr.MgrImage;
@@ -177,6 +178,14 @@ public class Ex {
 	public static MgrZip Zip() {
 
 		return MgrZip.getInstance();
+	}
+
+	/**
+	 * Ex Dialog 管理
+	 */
+	public static MgrDialog Dialog(Context context) {
+
+		return MgrDialog.getInstance(context);
 	}
 
 }

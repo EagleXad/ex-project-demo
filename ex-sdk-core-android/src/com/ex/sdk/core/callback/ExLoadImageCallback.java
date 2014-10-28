@@ -23,5 +23,5 @@ public abstract class ExLoadImageCallback {
 	 * @param data
 	 */
 	public abstract void onPostExecute(int code, View view, Object data);
-	
+
 }

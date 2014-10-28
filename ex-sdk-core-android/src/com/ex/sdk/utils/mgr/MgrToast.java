@@ -3,6 +3,14 @@ package com.ex.sdk.utils.mgr;
 import android.content.Context;
 import android.widget.Toast;
 
+/** 
+* @ClassName: MgrToast 
+* @Description: MgrToast 管理类
+* @author Aloneter
+* @date 2014-10-24 下午5:50:44 
+* @Version 1.0
+* 
+*/
 public class MgrToast {
 
 	public static Context mContext; // 上下文
