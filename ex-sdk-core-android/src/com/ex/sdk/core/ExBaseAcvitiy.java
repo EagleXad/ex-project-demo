@@ -1,3 +1,9 @@
+/*      
+ * Copyright (c) 2014 by EagleXad
+ * Team: EagleXad 
+ * Create: 2014-08-29
+ */
+
 package com.ex.sdk.core;
 
 import java.io.InputStream;
@@ -18,8 +24,8 @@ import com.ex.sdk.core.callback.ExRequestCallback;
 import com.ex.sdk.core.exception.ExException;
 import com.ex.sdk.core.ible.ExNetIble;
 import com.ex.sdk.core.ible.ExReceiverIble;
-import com.ex.sdk.utils.Ex;
-import com.ex.sdk.utils.lib.xutils.ViewUtils;
+import com.ex.sdk.core.utils.Ex;
+import com.ex.sdk.ext.lib.xutils.ViewUtils;
 
 /**
  * @ClassName: ExBaseAcvitiy
@@ -33,11 +39,11 @@ import com.ex.sdk.utils.lib.xutils.ViewUtils;
 public abstract class ExBaseAcvitiy extends FragmentActivity {
 
 	/**
-	 * 显示加载框
+	 * FINAL_显示加载框
 	 */
 	public static final int LOADING_DIALOG_SHOW = 100;
 	/**
-	 * 隐藏加载框
+	 * FINAL_隐藏加载框
 	 */
 	public static final int LOADING_DIALOG_DISS = 101;
 
@@ -83,12 +89,10 @@ public abstract class ExBaseAcvitiy extends FragmentActivity {
 	}
 
 	/**
-	 * 初始化操作接口
+	 * Method_初始化操作接口
 	 * 
-	 * @param netIble
-	 *            网络请求处理接口
-	 * @param receiverIble
-	 *            广播处理
+	 * @param netIble_网络请求处理接口
+	 * @param receiverIble_广播处理
 	 */
 	protected void initIble(ExNetIble netIble, ExReceiverIble receiverIble) {
 
@@ -97,12 +101,10 @@ public abstract class ExBaseAcvitiy extends FragmentActivity {
 	}
 
 	/**
-	 * 启动任务请求数据
+	 * Method_启动任务请求数据
 	 * 
-	 * @param url
-	 *            请求主地址信息
-	 * @param what
-	 *            请求标识码
+	 * @param url_请求主地址信息
+	 * @param what_请求标识码
 	 */
 	protected void startTask(String url, int what) {
 
@@ -110,20 +112,17 @@ public abstract class ExBaseAcvitiy extends FragmentActivity {
 	}
 
 	/**
-	 * 启动任务请求数据
+	 * Method_启动任务请求数据
 	 * 
-	 * @param url
-	 *            请求主地址信息
-	 * @param what
-	 *            请求标识码
-	 * @param isShow
-	 *            是否显示加载框
+	 * @param url_请求主地址信息
+	 * @param what_请求标识码
+	 * @param isShow_是否显示加载框
 	 */
 	protected void startTask(final String url, final int what, final int isShow) {
 
 		// 判断当前是否显示加载框
 		if (isShow == ExBaseAcvitiy.LOADING_DIALOG_SHOW) {
-			Ex.Dialog(mContext).showProgressDialog("", "");
+			Ex.Dialog(mContext).showProgressDialog("", ExConstants.STR_LOADING_WARN);
 		}
 		// 接口回调回去操作参数
 		Map<String, String> params = mNetIble.onStart(what);
@@ -174,7 +173,7 @@ public abstract class ExBaseAcvitiy extends FragmentActivity {
 	}
 
 	/**
-	 * 消息处理对象
+	 * NEW_消息处理对象
 	 */
 	private Handler mHandler = new Handler() {
 
@@ -203,26 +202,26 @@ public abstract class ExBaseAcvitiy extends FragmentActivity {
 	};
 
 	/**
-	 * 广播处理对象
+	 * NEW_广播处理对象
 	 */
 	private BroadcastReceiver mReceiver = new BroadcastReceiver() {
 
 		@Override
 		public void onReceive(Context context, Intent intent) {
 
-			//回调广播结果
+			// 回调广播结果
 			mReceiverIble.onReceiver(intent);
 		}
 	};
 
 	/**
-	 * 注册本地广播
+	 * Method_注册本地广播
 	 */
 	private void regiesterReceiver() {
 
 		IntentFilter intentFilter = new IntentFilter();
 
-		//获取设置 Action 数据对Action进行绑定
+		// 获取设置 Action 数据对Action进行绑定
 		String[] actions = exInitReceiver();
 
 		if (actions != null) {
@@ -230,12 +229,12 @@ public abstract class ExBaseAcvitiy extends FragmentActivity {
 				intentFilter.addAction(actions[i]);
 			}
 		}
-		//注册广播
+		// 注册广播
 		mContext.registerReceiver(mReceiver, intentFilter);
 	}
 
 	/**
-	 * 注销本地广播
+	 * Method_注销本地广播
 	 */
 	private void unregiesterReceiver() {
 
@@ -245,29 +244,29 @@ public abstract class ExBaseAcvitiy extends FragmentActivity {
 	}
 
 	/**
-	 * 初始化布局 ：对展示布局进行设置
+	 * Method_初始化布局 ：对展示布局进行设置
 	 * 
 	 * @return 布局资源 ID
 	 */
 	protected abstract int exInitLayout();
 
 	/**
-	 * 初始化传入参数 ：处理进入之前传入的数据
+	 * Method_初始化传入参数 ：处理进入之前传入的数据
 	 */
 	protected abstract void exInitBundle();
 
 	/**
-	 * 初始化控件参数： 在该方法中，可以对已绑定的控件数据初始化
+	 * Method_初始化控件参数： 在该方法中，可以对已绑定的控件数据初始化
 	 */
 	protected abstract void exInitView();
 
 	/**
-	 * 初始化之后： 在基础数据初始化完成之后可以使用该方法
+	 * Method_初始化之后： 在基础数据初始化完成之后可以使用该方法
 	 */
 	protected abstract void exInitAfter();
 
 	/**
-	 * 初始化广播处理 Action： 注意传入数据使用全局常量管理
+	 * Method_初始化广播处理 Action： 注意传入数据使用全局常量管理
 	 * 
 	 * @return 处理 Action 数据
 	 */

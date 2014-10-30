@@ -1,3 +1,9 @@
+/*      
+ * Copyright (c) 2014 by EagleXad
+ * Team: EagleXad 
+ * Create: 2014-08-29
+ */
+
 package com.ex.sdk.core.exception;
 
 /**
@@ -10,37 +16,40 @@ package com.ex.sdk.core.exception;
  */
 public class ExException extends Throwable {
 
-	private static final long serialVersionUID = 1L; // 序列 ID
+	/**
+	 * FINAL_序列 ID
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
-	 * 构造函数
+	 * Construction_构造函数
 	 */
 	public ExException() {
 	}
 
 	/**
-	 * 构造函数
+	 * Construction_构造函数
 	 * 
-	 * @param detailMessage
+	 * @param detailMessage_详细信息
 	 */
 	public ExException(String detailMessage) {
 		super(detailMessage);
 	}
 
 	/**
-	 * 构造函数
+	 * Construction_构造函数
 	 * 
-	 * @param throwable
+	 * @param throwable_异常对象
 	 */
 	public ExException(Throwable throwable) {
 		super(throwable);
 	}
 
 	/**
-	 * 构造函数
+	 * Construction_构造函数
 	 * 
-	 * @param detailMessage
-	 * @param throwable
+	 * @param detailMessage_详细信息
+	 * @param throwable_异常对象
 	 */
 	public ExException(String detailMessage, Throwable throwable) {
 		super(detailMessage, throwable);
