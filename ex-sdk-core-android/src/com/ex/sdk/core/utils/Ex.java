@@ -26,6 +26,7 @@ import com.ex.sdk.core.utils.mgr.MgrString;
 import com.ex.sdk.core.utils.mgr.MgrT;
 import com.ex.sdk.core.utils.mgr.MgrThread;
 import com.ex.sdk.core.utils.mgr.MgrToast;
+import com.ex.sdk.core.utils.mgr.MgrUpdate;
 import com.ex.sdk.core.utils.mgr.MgrZip;
 
 /**
@@ -192,6 +193,14 @@ public class Ex {
 	public static MgrDialog Dialog(Context context) {
 
 		return MgrDialog.getInstance(context);
+	}
+
+	/**
+	 * Ex Update 管理
+	 */
+	public static MgrUpdate Update(Context context) {
+
+		return MgrUpdate.getInstance(context);
 	}
 
 }

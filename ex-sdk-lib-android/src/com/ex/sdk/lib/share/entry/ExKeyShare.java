@@ -1,3 +1,9 @@
+/*      
+ * Copyright (c) 2014 by EagleXad
+ * Team: EagleXad 
+ * Create: 2014-08-29
+ */
+
 package com.ex.sdk.lib.share.entry;
 
 /**

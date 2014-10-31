@@ -1,3 +1,9 @@
+/*      
+ * Copyright (c) 2014 by EagleXad
+ * Team: EagleXad 
+ * Create: 2014-08-29
+ */
+
 package com.ex.sdk.lib.barcode;
 
 import java.io.IOException;
@@ -82,7 +88,7 @@ public final class ExCaptureActivity extends Activity implements SurfaceHolder.C
 
 		Window window = getWindow();
 		window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-		setContentView(R.layout.capture);
+		setContentView(R.layout.ex_capture);
 
 		btn_back = (ImageView) findViewById(R.id.capture_back);
 		btn_back.setOnClickListener(new OnClickListener() {
