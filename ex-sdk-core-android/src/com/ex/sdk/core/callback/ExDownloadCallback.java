@@ -1,3 +1,9 @@
+/*      
+ * Copyright (c) 2014 by EagleXad
+ * Team: EagleXad 
+ * Create: 2014-08-29
+ */
+
 package com.ex.sdk.core.callback;
 
 import com.ex.sdk.core.exception.ExException;
@@ -12,23 +18,32 @@ import com.ex.sdk.core.exception.ExException;
  */
 public abstract class ExDownloadCallback {
 
-	public static final int DOWN_LOAD_SUCCESS = 0; // 下载成功
-	public static final int DOWN_LOAD_ERROR = -1; // 下载错误
-	public static final int DOWN_LOAD_FAIL = 1; // 下载失败
+	/**
+	 * FINAL_下载成功
+	 */
+	public static final int DOWN_LOAD_SUCCESS = 0;
+	/**
+	 * FINAL_下载错误
+	 */
+	public static final int DOWN_LOAD_ERROR = -1; 
+	/**
+	 * FINAL_下载失败
+	 */
+	public static final int DOWN_LOAD_FAIL = 1;
 
 	/**
-	 * 下载成功回调
+	 * Method_下载成功回调
 	 * 
-	 * @param inStream
-	 * @param cookies
+	 * @param statusCode_请求状态码
+	 * @param fileString_文件地址字符串
 	 */
 	public abstract void onSuccess(int statusCode, String fileString);
 
 	/**
-	 * 下载失败回调
+	 * Method_下载失败回调
 	 * 
-	 * @param statusCode
-	 * @param e
+	 * @param statusCode_请求状态码
+	 * @param e_异常信息
 	 */
 	public abstract void onError(int statusCode, ExException e);
 

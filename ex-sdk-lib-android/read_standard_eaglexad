@@ -1,0 +1,183 @@
+############################################
+
+1.该 SDK-LIB 提供功能
+	：二维码扫描
+	：UMeng 统计接口
+	：百度 PUSH 接口
+	：ShareSDK 分享接口
+
+############################################
+模板案例参考 ExBaseActivity
+
+1.要求定义全局变量需要 "m"开头
+2.类换行要求：首行，末行需空一行
+3.方法换行要求：首行需空一行
+4.return,breank,conitnue 关键字上部空一行
+5.尽量清除黄色提示警告
+
+############################################
+类全局说明
+----
+/*      
+ * Copyright (c) 2014 by EagleXad
+ * Team: EagleXad 
+ * Create: 2014-08-29
+ */
+
+############################################
+Class,interface: 注释，适用于所有的类,接口全局注释说明
+----
+template
+/**
+ * @ClassName: 类名
+ * @Description: 对类的描述
+ * @author 作者
+ * @date 注释时间
+ * @Version 版本号
+ * 
+ */
+ 
+example
+/**
+ * @ClassName: ExBaseAcvitiy
+ * @Description: Ex Base Activity
+ * @author Aloneter
+ * @date 2014-10-24 下午5:07:37
+ * @Version 1.0
+ * 
+ */
+ 
+############################################
+static final: 注释，使用于静态,最终修饰的常量注释说明
+----
+template
+/**
+ * FINAL_注释说明信息
+ */
+
+ 
+example
+/**
+ * FINAL_显示加载框
+ */
+public static final int LOADING_DIALOG_SHOW = 100;
+
+############################################
+construction : 注释，使用于类的构造函数
+----
+template
+/**
+ * Construction_构造函数
+ */
+ 
+example
+/**
+ * Construction_构造函数
+ */
+public Class(){
+}
+
+############################################
+private public protected method var: 注释，使用于私有的和方法内部的变量及代码注释说明，注意全局需在定义后面说明，方法内部需要在上边注释
+----
+template
+// 注释说明
+
+example
+private ExNetIble mNetIble; // 网络请求接口
+
+public void test(){
+	
+	//定义变量
+	string result = ""; 
+}
+
+############################################
+method : 注释，用于方法注释，要求需要是自己定义的方法，不包括重写方法
+----
+template
+/**
+ * Method_方法功能说明
+ * 
+ * @param param_参数说明
+ *
+ * @return 结果说明
+ */
+
+example
+/**
+ * Method_测试方法
+ * 
+ * @param temp_临时变量
+ *
+ * @return 结果
+ */
+public String test(String temp){
+	
+	//定义变量
+	String result = temp; 
+	
+	return result;
+}
+ 
+############################################
+new Object(): 注释，使用于新创建的对应信息注释说明
+----
+template
+/**
+ * NEW_注释说明
+ */
+private BroadcastReceiver mReceiver = new BroadcastReceiver() {
+
+	@Override
+	public void onReceive(Context context, Intent intent) {
+
+		// 回调广播结果
+		mReceiverIble.onReceiver(intent);
+	}
+};
+
+example
+/**
+ * NEW_广播处理对象
+ */
+private BroadcastReceiver mReceiver = new BroadcastReceiver() {
+
+	@Override
+	public void onReceive(Context context, Intent intent) {
+
+		// 回调广播结果
+		mReceiverIble.onReceiver(intent);
+	}
+};
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

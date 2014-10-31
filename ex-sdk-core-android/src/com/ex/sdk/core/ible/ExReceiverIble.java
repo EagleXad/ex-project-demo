@@ -1,3 +1,9 @@
+/*      
+ * Copyright (c) 2014 by EagleXad
+ * Team: EagleXad 
+ * Create: 2014-08-29
+ */
+
 package com.ex.sdk.core.ible;
 
 import android.content.Intent;
@@ -13,10 +19,9 @@ import android.content.Intent;
 public interface ExReceiverIble {
 
 	/**
-	 * 广播接口回调
+	 * Method_广播接口回调
 	 * 
-	 * @param intent
-	 *            操作意图对象
+	 * @param intent_操作意图对象
 	 */
 	public void onReceiver(Intent intent);
 
