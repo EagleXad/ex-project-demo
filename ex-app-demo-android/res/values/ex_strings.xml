@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="ex_str_username">账号：</string>
-    <string name="ex_str_password">密码：</string>
-    <string name="ex_str_login">登录</string>
-    <string name="ex_str_copyright">EagleXad 团队所有版权</string>
-    <string name="ex_str_version">v 1.0</string>
-    
-</resources>

@@ -28,7 +28,7 @@ import android.util.Base64;
  */
 public class MgrPerference {
 
-	private String mMainPre = "omMainPre"; // 标签
+	private String mMainPre = "EX_PRE_MAIN"; // 标签
 
 	private static Context mContext; // 上下文
 
@@ -182,7 +182,7 @@ public class MgrPerference {
 
 		editor.commit();
 	}
-	
+
 	/**
 	 * 获取内容 （Long）
 	 * 

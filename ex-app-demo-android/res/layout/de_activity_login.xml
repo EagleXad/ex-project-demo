@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/ex_color_white" >
+
+    <com.ex.app.demo.ui.widget.DeTitleBar
+        android:id="@+id/ex_title_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/ex_al_fl_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/ex_al_et_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" 
+                android:background="@drawable/de_input_all"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="left|center_vertical"
+                android:text="@string/ex_str_username"
+                android:textColor="@color/ex_color_black" />
+
+            <Button
+                android:id="@+id/ex_al_btn_cl_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right|center_vertical"
+                android:background="@drawable/de_btn_clear"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/ex_al_fl_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/ex_al_et_pass"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" 
+                android:background="@drawable/de_input_all"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="left|center_vertical"
+                android:text="@string/ex_str_password"
+                android:textColor="@color/ex_color_black" />
+
+            <Button
+                android:id="@+id/ex_al_btn_cl_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right|center_vertical"
+                android:background="@drawable/de_btn_clear"/>
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/ex_al_btn_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/de_btn_blue"
+            android:textColor="@color/ex_color_white"
+            android:text="@string/ex_str_login" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/ex_str_version" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/ex_str_copyright" />
+    </LinearLayout>
+
+</RelativeLayout>

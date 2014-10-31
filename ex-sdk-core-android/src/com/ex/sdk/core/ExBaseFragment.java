@@ -127,6 +127,12 @@ public abstract class ExBaseFragment extends Fragment {
 	 */
 	protected void startTask(final String url, final int what, final int isShow) {
 
+		// 判断请求地址是否为空
+		if (Ex.String().isEmpty(url)) {
+			Ex.Toast(mContext).show("请求地址不能为空");
+
+			return;
+		}
 		// 判断当前是否显示加载框
 		if (isShow == ExBaseAcvitiy.LOADING_DIALOG_SHOW) {
 			Ex.Dialog(mContext).showProgressDialog("", ExConstants.STR_LOADING_WARN);
