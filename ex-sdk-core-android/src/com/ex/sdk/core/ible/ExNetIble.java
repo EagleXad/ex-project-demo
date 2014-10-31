@@ -1,3 +1,9 @@
+/*      
+ * Copyright (c) 2014 by EagleXad
+ * Team: EagleXad 
+ * Create: 2014-08-29
+ */
+
 package com.ex.sdk.core.ible;
 
 import java.util.Map;
@@ -13,7 +19,7 @@ import java.util.Map;
 public interface ExNetIble {
 
 	/**
-	 * 启动处理回调
+	 * Method_启动处理回调
 	 * 
 	 * @param what
 	 *            操作码
@@ -22,24 +28,19 @@ public interface ExNetIble {
 	public Map<String, String> onStart(int what);
 
 	/**
-	 * 成功处理回调
+	 * Method_成功处理回调
 	 * 
-	 * @param what
-	 *            操作码
-	 * @param result
-	 *            请求结果字符串
+	 * @param what_操作码
+	 * @param result_请求结果字符串
 	 */
 	public void onSuccess(int what, String result);
 
 	/**
-	 * 错误处理回调
+	 * Method_错误处理回调
 	 * 
-	 * @param what
-	 *            操作码
-	 * @param e
-	 *            错误码
-	 * @param message
-	 *            错误信息
+	 * @param what_操作码
+	 * @param e_错误码
+	 * @param message_错误信息
 	 */
 	public void onError(int what, int e, String message);
 

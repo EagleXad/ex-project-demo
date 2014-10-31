@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import cn.sharesdk.framework.ShareSDK;
@@ -12,42 +13,68 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
 import com.ex.sdk.lib.R;
 import com.ex.sdk.lib.share.entry.ExKeyShare;
 
+/**
+ * @ClassName: MgrSharer
+ * @Description: ShareSDK 分享管理对象
+ * @author Aloneter
+ * @date 2014-10-31 上午11:40:09
+ * @Version 1.0
+ * 
+ */
 public class MgrSharer {
 
-	private String mTitile = "分享中...";
+	private String mTitile = "分享中..."; // 分享标题
 
-	private static Activity mActivity;
+	private static Activity mActivity; // 上下文
+	private static Context mContext;
 
+	/**
+	 * 创建者
+	 */
 	private static class SharerHolder {
 
 		private static MgrSharer mgr = new MgrSharer();
 
 	}
 
+	/**
+	 * 获取当前对象实例
+	 */
 	public static MgrSharer getInstance(Activity activity) {
 
 		if (mActivity == null) {
 			mActivity = activity;
-
-			SharerHolder.mgr.init();
+			mContext = activity.getApplicationContext();
 		}
 
 		return SharerHolder.mgr;
 	}
 
-	private void init() {
+	/**
+	 * Method_初始化
+	 */
+	public void init() {
 
-		ShareSDK.initSDK(mActivity);
+		ShareSDK.initSDK(mContext);
 		ShareSDK.setConnTimeout(5000);
 		ShareSDK.setReadTimeout(10000);
-
 	}
 
+	/**
+	 * Method_设置标题
+	 * 
+	 * @param title_标题
+	 */
 	public void setTitle(String title) {
 
 		mTitile = title;
 	}
 
+	/**
+	 * Method_短息分享
+	 * 
+	 * @param content_分享内容
+	 */
 	public void shareSMS(String content) {
 
 		Uri smsToUri = Uri.parse("smsto:");
@@ -57,35 +84,73 @@ public class MgrSharer {
 		mActivity.startActivity(intent);
 	}
 
+	/**
+	 * Method_分享打开
+	 */
 	public void shareSend() {
 
 	}
 
+	/**
+	 * Method_分享文字
+	 * 
+	 * @param content_内容
+	 */
 	public void shareSend(String content) {
 
 		openShareByContentOrBinary(content, null);
 	}
 
+	/**
+	 * Method_分享文件
+	 * 
+	 * @param binary_文件
+	 */
 	public void shareSend(File binary) {
 
 		openShareByContentOrBinary(null, binary);
 	}
 
+	/**
+	 * Method_分享文件和内容
+	 * 
+	 * @param content_内容
+	 * @param binary_文件
+	 */
 	public void shareSend(String content, File binary) {
 
 		openShareByContentOrBinary(content, binary);
 	}
 
+	/**
+	 * Method_分享 URI
+	 * 
+	 * @param uris_URI
+	 *            集合
+	 */
 	public void shareSend(ArrayList<Uri> uris) {
 
 		openShareByList(uris);
 	}
 
+	/**
+	 * Method_分享指定平台对象
+	 * 
+	 * @param silent_是否使用客户端
+	 * @param platform_分享平台
+	 * @param share_分享对象
+	 */
 	public void shareSend(boolean silent, String platform, ExKeyShare share) {
 
 		shareOther(silent, platform, share);
 	}
 
+	/**
+	 * Method_打开分享内容和文件
+	 * 
+	 * @param content_内容
+	 * @param binary_文件
+	 */
 	private void openShareByContentOrBinary(String content, File binary) {
 
 		Intent intent = new Intent(Intent.ACTION_SEND);
@@ -104,6 +169,12 @@ public class MgrSharer {
 		mActivity.startActivity(Intent.createChooser(intent, mTitile));
 	}
 
+	/**
+	 * Method_打开分享通过集合
+	 * 
+	 * @param uris_URI
+	 *            集合
+	 */
 	private void openShareByList(ArrayList<Uri> uris) {
 
 		Intent intent = new Intent(Intent.ACTION_SEND_MULTIPLE);
@@ -113,6 +184,13 @@ public class MgrSharer {
 		mActivity.startActivity(Intent.createChooser(intent, mTitile));
 	}
 
+	/**
+	 * Method_分享其他
+	 * 
+	 * @param silent_是否使用客户端
+	 * @param platform_分享平台参数
+	 * @param share_分享对象
+	 */
 	private void shareOther(boolean silent, String platform, ExKeyShare share) {
 
 		final OnekeyShare oks = new OnekeyShare();
@@ -161,6 +239,12 @@ public class MgrSharer {
 		oks.show(mActivity);
 	}
 
+	/**
+	 * Method_分享测试
+	 * 
+	 * @param silent_分享是否使用客户端
+	 * @param platform_分享指定平台
+	 */
 	@SuppressWarnings("unused")
 	private void demoOther(boolean silent, String platform) {
 

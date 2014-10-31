@@ -8,7 +8,6 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
 
-    <!-- Push service 运行需要的权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -21,7 +20,12 @@
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
+    <!-- 扫描二维码声明  -->
+    <activity
+            android:name="com.ex.sdk.lib.barcode.ExCaptureActivity" />
+    
     <!-- push应用定义消息receiver声明 -->
     <receiver android:name="com.ex.sdk.lib.push.receive.ExPushMessageReceive" >
         <intent-filter>
